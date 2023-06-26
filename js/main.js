@@ -189,7 +189,7 @@ const getForecast = () => {
 };
 
 // todoList
-const BASE_URL = './data/base.json';
+const BASE_URL = '../data/base.json';
 let editId,
 	isEditTask = false,
 	tasks = [];
