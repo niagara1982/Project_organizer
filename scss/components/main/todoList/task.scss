@@ -1,0 +1,43 @@
+.task {
+	&:not(:last-child) {
+		margin: 0 0 15px;
+	}
+
+	.taskTitle {
+		font-size: 14px;
+		cursor: pointer;
+	}
+
+	.taskDescription {
+		font-size: 10px;
+	}
+
+	.checked {
+		color: var(--dark);
+		text-decoration: line-through;
+	}
+
+	.taskActions {
+		margin: 10px 0;
+		padding: 5px 0;
+
+		border: {
+			top: 1px solid #999;
+			bottom: 1px solid #999;
+		}
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.taskEdit {
+			color: var(--green);
+			cursor: pointer;
+		}
+
+		.taskDelete {
+			color: var(--red);
+			cursor: pointer;
+		}
+	}
+}

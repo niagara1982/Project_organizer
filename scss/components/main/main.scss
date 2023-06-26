@@ -1,0 +1,94 @@
+.mainBody {
+	margin: 30px 0;
+
+	.wrapper {
+		padding: 0 15px;
+	}
+
+	.leftContainer {
+		display: flex;
+		flex-direction: column;
+
+		max-width: 100%;
+		gap: 30px;
+	}
+
+	.response {
+		max-width: 100%;
+	}
+
+	.rightContainer {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 425px) {
+	.mainBody {
+		.leftContainer,
+		.response {
+			max-width: 80%;
+			margin: 0 auto;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.wrapper {
+		padding: 0 30px;
+	}
+
+	.mainBody {
+		display: flex;
+		justify-content: space-around;
+		align-items: flex-start;
+
+		.leftContainer {
+			max-width: 40%;
+			margin: 0;
+		}
+
+		.response {
+			max-width: 285px;
+			margin: 0;
+
+			.adverts {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.mainBody {
+		gap: 30px;
+
+		.leftContainer {
+			max-width: 30%;
+		}
+
+		.response {
+			max-width: 326px;
+
+			.exchangeRates {
+				display: none;
+			}
+		}
+
+		.exchangeRates {
+			margin: 0;
+		}
+
+		.rightContainer {
+			display: block;
+			max-width: 30%;
+			/* max-width: 326px; */
+		}
+	}
+}
+
+@import './forecast/forecast.scss';
+@import './todoList/todoList.scss';
+@import './calculator/calculator.scss';
+@import './news/news.scss';
+@import './exchange/exchange.scss';
+@import './advert/advert.scss';

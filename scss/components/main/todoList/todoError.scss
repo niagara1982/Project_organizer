@@ -1,0 +1,13 @@
+.todoError {
+	background: #ff7373;
+	color: var(--light);
+	border-radius: 5px;
+
+	padding: 5px 0;
+	margin: 15px 0;
+
+	display: none;
+	text-align: center;
+	pointer-events: none;
+	transition: all 1s ease;
+}

@@ -1,0 +1,31 @@
+.search {
+	.searchBody {
+		display: flex;
+		justify-content: center;
+		margin: 15px 0;
+		background: var(--light);
+		color: var(--dark);
+		border: 2px solid #ff8000;
+
+		#searchInput {
+			width: 100%;
+			padding: 10px 15px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.search {
+		.searchBody {
+			margin: 15px 30px;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.search {
+		.searchBody {
+			margin: 15px 60px;
+		}
+	}
+}

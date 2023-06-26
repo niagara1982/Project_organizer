@@ -1,0 +1,111 @@
+/* variables */
+:root {
+	--font-stack: 'Montserrat', sans-serif;
+	--dark: #000;
+	--light: #fff;
+	--hed-light: #607d8b;
+	--hed-dark: #33444c;
+	--lightTheme: #eee;
+	--darkTheme: #222;
+	--yel: #ffff00;
+	--green: #00d455;
+	--red: #f00;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-stack);
+	background: var(--lightTheme);
+	transition: all 1s ease;
+
+	// header, navigation, footer
+	.header,
+	.nav ul,
+	.footer {
+		background: var(--hed-light);
+	}
+
+	// forecast
+	.forecast {
+		background-image: linear-gradient(
+			to right top,
+			#082757,
+			#13378b,
+			#4743c0,
+			#7f3bdd,
+			#bd1df2
+		);
+	}
+
+	// todoList
+	.todo {
+		background-image: linear-gradient(
+			to left bottom,
+			#1a6c9f,
+			#0061ab,
+			#0053b3,
+			#1541b5,
+			#4824af
+		);
+	}
+
+	// dark theme
+	&.dark {
+		background: var(--darkTheme);
+
+		// header, navigation, footer
+		.header,
+		.nav ul,
+		.footer {
+			background: var(--hed-dark);
+		}
+
+		// forecast
+		.forecast {
+			background-image: linear-gradient(
+				to right top,
+				#051937,
+				#0d1d4b,
+				#231e5d,
+				#3d1a6c,
+				#5b0a76
+			);
+		}
+
+		// todoList
+		.todo {
+			background-image: linear-gradient(
+				to left bottom,
+				#0a3048,
+				#002b4f,
+				#002555,
+				#081d57,
+				#210f55
+			);
+		}
+	}
+}
+
+#root {
+	min-width: 320px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+.wrapper {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+.stopScroll {
+	overflow: hidden;
+}
+
+@import './components/header/header.scss';
+@import './components/search/search.scss';
+@import './components/main/main.scss';
+@import './components/footer/footer.scss';

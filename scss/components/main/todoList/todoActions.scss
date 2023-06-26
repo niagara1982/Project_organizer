@@ -1,0 +1,40 @@
+.todoActions {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border: {
+		top: 1px solid #999;
+		bottom: 1px solid #999;
+	}
+
+	margin: 15px 0 0 0;
+	padding: 15px 0;
+
+	.todoAdd,
+	.todoClearFields,
+	.todoDelete {
+		color: var(--light);
+		border: none;
+		text-align: center;
+		cursor: pointer;
+		transition: all 0.5s ease;
+
+		font: {
+			size: 18px;
+			weight: 400;
+		}
+	}
+
+	.todoAdd:hover {
+		color: var(--green);
+	}
+
+	.todoClearFields:hover {
+		color: var(--yel);
+	}
+
+	.todoDelete:hover {
+		color: var(--red);
+	}
+}

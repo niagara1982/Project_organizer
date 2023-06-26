@@ -1,0 +1,23 @@
+.forecast {
+	width: 100%;
+	padding: 50px 0;
+	transition: all 1s ease;
+
+	color: var(--light);
+	border-radius: 20px;
+
+	.forecastBody {
+		margin: 0 20px;
+
+		i {
+			font-size: 18px;
+			margin: 0 5px 0 0;
+
+			color: var(--green);
+		}
+	}
+}
+
+@import './forecastData.scss';
+@import './forecastInfo.scss';
+@import './forecastDaily.scss';

@@ -1,0 +1,43 @@
+.header {
+	border-bottom: 1px solid var(--dark);
+
+	.wrapper {
+		padding: 0 15px;
+	}
+
+	.headerBody {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 0;
+
+		.headerLogo {
+			display: flex;
+			align-items: center;
+
+			color: var(--light);
+			font: {
+				size: 24px;
+				weight: 700;
+			}
+
+			img {
+				width: 20px;
+				margin: 0 0 0 5px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.header {
+		border: none;
+
+		.wrapper {
+			padding: 0 30px;
+		}
+	}
+}
+
+@import './navigation.scss';
+@import './logo.scss';

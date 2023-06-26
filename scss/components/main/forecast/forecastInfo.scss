@@ -1,0 +1,20 @@
+.forecastInfo {
+	p {
+		&:not(:last-child) {
+			padding: 0 0 5px 0;
+		}
+	}
+
+	i {
+		width: 20px;
+	}
+
+	.forecastDayWeek {
+		color: var(--light);
+		font-size: 18px;
+	}
+
+	.forecastState {
+		font-size: 14px;
+	}
+}

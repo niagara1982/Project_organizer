@@ -1,0 +1,39 @@
+.forecastData {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 30px 0;
+
+	i {
+		margin: 0;
+	}
+
+	.forecastCity {
+		cursor: pointer;
+		color: var(--light);
+		padding: 5px 10px 5px 5px;
+
+		option {
+			color: var(--dark);
+		}
+	}
+
+	.tempInfo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.forecastTemp {
+			font-size: 24px;
+			color: var(--light);
+
+			img {
+				width: 30px;
+			}
+		}
+
+		.feelTemp {
+			font-size: 10px;
+		}
+	}
+}

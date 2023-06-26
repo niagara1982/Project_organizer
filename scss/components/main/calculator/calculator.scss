@@ -1,0 +1,43 @@
+.calc {
+	background: var(--light);
+	border-radius: 20px;
+	transition: all 1s ease;
+
+	padding: 80px 0 30px;
+
+	&.dark {
+		background: var(--dark);
+		color: var(--light);
+
+		.calcBody {
+			.btn {
+				color: var(--light);
+				background: #222;
+
+				&:hover {
+					background-color: #686868;
+				}
+			}
+
+			.opt {
+				background: #fc0;
+
+				&:hover {
+					background-color: #fc0;
+				}
+			}
+		}
+	}
+
+	.calcBody {
+		margin: 0 20px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.calc {
+		padding: 80px 0 45px;
+	}
+}
+
+@import './buttons.scss';

@@ -1,0 +1,32 @@
+.forecastDaily {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 90px auto 0;
+	gap: 5px;
+
+	border-radius: 20px;
+
+	.day {
+		padding: 15px 5px;
+		text-align: center;
+		font-size: 8px;
+		margin: 5px 0 0 0;
+
+		background: #eeeeee23;
+		border-radius: 10px;
+		color: #eee;
+
+		&:first-child {
+			background: #2222223c;
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.forecastDaily {
+		.day {
+			font-size: 8px;
+		}
+	}
+}

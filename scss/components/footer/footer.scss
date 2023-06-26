@@ -1,0 +1,17 @@
+.footer {
+	margin-top: auto;
+
+	.footerBody {
+		text-align: center;
+		padding: 15px 0;
+		color: var(--light);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.footer {
+		.footerBody {
+			text-align: left;
+		}
+	}
+}

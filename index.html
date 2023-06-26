@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+	<title>Organize project</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<!-- js -->
+	<script src='./js/classes.js' defer></script>
+	<script src='./js/countryList.js' defer></script>
+	<script src='./js/main.js' defer></script>
+</head>
+
+<body class='dark'>
+	<div id="root">
+
+		<!-- header -->
+		<header class="header">
+			<div class="wrapper">
+				<div class="headerBody">
+
+					<!-- logo -->
+					<a href="./index.html" class="headerLogo">
+						Organizer
+						<img src="./img/jin-jang.png" alt="Organizer jin & jang">
+					</a>
+
+					<!-- navigation -->
+					<nav class="nav" role='navigation'>
+						<ul>
+							<li>
+								<a href="./index.html" class="navLink active">Home</a>
+							</li>
+
+							<li>
+								<a href="https://lms.ithillel.ua/" class="navLink" target='_blank'>Hillel</a>
+							</li>
+
+							<li>
+								<a href="https://www.youtube.com/" class="navLink" target='_blank'>Youtube</a>
+							</li>
+
+							<li>
+								<button type="button" class="glTheme">
+									Change theme
+									<i class="fa-solid fa-sun" data-gl-theme></i>
+								</button>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- burger navigation -->
+					<button type="button" class="burgerNav">
+						<span class="burgerLine"></span>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- field search -->
+		<section class="search">
+			<div class="wrapper">
+				<div class="searchBody">
+					<input type="search" placeholder='Search...' id='searchInput'>
+				</div>
+			</div>
+		</section>
+
+		<main class="main">
+			<div class="wrapper">
+				<div class="mainBody">
+
+					<!-- left container -->
+					<aside class="leftContainer">
+
+						<!-- forecast -->
+						<section class="forecast">
+							<div class="forecastBody">
+
+								<!-- city -->
+								<div class="forecastData">
+									<div class="forecastLocate">
+										<i class="fas fa-map-marker-alt"></i>
+										<select class="forecastCity">
+											<option value="Kyiv">Kyiv</option>
+											<option value="London">London</option>
+											<option value="New York">New York</option>
+										</select>
+									</div>
+
+									<div class="tempInfo">
+										<p class="forecastTemp">
+											<img src="./img/01-s.png" alt="Sun" />
+											0&deg;C
+										</p>
+										<p class="feelTemp">feels like 0&deg;C</p>
+									</div>
+								</div>
+
+								<!-- info -->
+								<div class="forecastInfo">
+									<h2 class="forecastDayWeek">Monday</h2>
+									<p class="forecastState"><i class="fas fa-cloud"></i>Sunny</p>
+									<p class="forecastSpeedWind"><i class="fas fa-wind"></i>0 km/h</p>
+								</div>
+
+								<!-- daily -->
+								<div class="forecastDaily"></div>
+
+							</div>
+						</section>
+
+						<!-- todo list -->
+						<section class="todo">
+							<div class="todoBody">
+								<div class="todoHeader">ToDo List</div>
+
+								<form class='todoForm'>
+									<!-- title -->
+									<div class="todoTitle">
+										<img src="./img/bars-sort.svg" alt="task title" />
+										<input type="text" placeholder="Title..." />
+									</div>
+
+									<!-- description -->
+									<div class="todoDescription">
+										<img src="./img/bars-sort.svg" alt="task description" />
+										<input type="text" placeholder="Description..." />
+									</div>
+
+									<!-- priority -->
+									<select class="todoPriority">
+										<option value="Low">Low</option>
+										<option value="Minor">Minor</option>
+										<option value="Major">Major</option>
+										<option value="High">High</option>
+									</select>
+
+									<!-- error block -->
+									<p class="todoError">Your fields are empty, order them.</p>
+
+									<!-- todo actions -->
+									<div class="todoActions">
+										<button type='button' class="todoAdd">Add</button>
+										<button type='button' class="todoClearFields">Clear</button>
+										<button type='button' class="todoDelete">Delete All</button>
+									</div>
+								</form>
+
+								<!-- list -->
+								<ul class="taskList">
+									<h3 class="taskHeader">Tasks</h3>
+
+									<!-- tasks -->
+									<div class="tasks">
+										<span class="empty">Your list is empty!</span>
+									</div>
+								</ul>
+							</div>
+						</section>
+
+						<!-- calculator -->
+						<section class="calc dark">
+							<div class="calcBody">
+								<button type="button" class="changeTheme">
+									<i class="fa-solid fa-sun" data-theme></i>
+								</button>
+								<div class="screenHistory"></div>
+								<div class="screen">0</div>
+								<div class="buttonBox">
+									<button class="btn cHistory" onclick="clearField(this)">AC</button>
+									<button class="btn" onclick="delNum()">&#9003;</button>
+									<button class="btn" onclick="percentOpt()">%</button>
+									<button class="btn opt" onclick="appendOpt('/')">÷</button>
+									<button class="btn" onclick="appendNum('7')">7</button>
+									<button class="btn" onclick="appendNum('8')">8</button>
+									<button class="btn" onclick="appendNum('9')">9</button>
+									<button class="btn opt" onclick="appendOpt('*')">x</button>
+									<button class="btn" onclick="appendNum('4')">4</button>
+									<button class="btn" onclick="appendNum('5')">5</button>
+									<button class="btn" onclick="appendNum('6')">6</button>
+									<button class="btn opt" onclick="appendOpt('-')">-</button>
+									<button class="btn" onclick="appendNum('1')">1</button>
+									<button class="btn" onclick="appendNum('2')">2</button>
+									<button class="btn" onclick="appendNum('3')">3</button>
+									<button class="btn opt" onclick="appendOpt('+')">+</button>
+									<button class="btn zero" onclick="appendNum('0')">0</button>
+									<button class="btn" onclick="appendNum('.')">.</button>
+									<button class="btn opt" onclick="calc()">=</button>
+								</div>
+							</div>
+						</section>
+					</aside>
+
+					<!-- response element -->
+					<section class="response">
+						<!-- news -->
+						<section class="news">
+							<table class="newsList">
+								<tr>
+									<th>Time / author</th>
+									<th>News</th>
+								</tr>
+							</table>
+						</section>
+
+						<!-- exchange -->
+						<section class="exchangeRates">
+							<form class="tcurrentExchange">
+								<h2>Currency Converter</h2>
+
+								<!-- from -->
+								<div class="tfrom">
+									<p>From</p>
+									<div class="selectBox"><select></select></div>
+								</div>
+
+								<!-- to -->
+								<div class="tto">
+									<p>To</p>
+									<div class="selectBox"><select></select></div>
+								</div>
+
+								<!-- rate -->
+								<div class="trate">
+									<p>Rate</p>
+									<div class="tselectBox">
+										<div class="ticon">
+											<img src="./img/arrow-right-left.svg" alt="reverse">
+										</div>
+										<div class="texchangeRate"></div>
+									</div>
+								</div>
+
+								<!-- amount -->
+								<div class="tamount">
+									<p>Amount</p>
+									<input type="text" value="1">
+								</div>
+
+								<!-- result -->
+								<div class="tresult">
+									<p>Result</p>
+									<div class="tselectBox">
+										<div class="ticon">
+											<img src="./img/arrow-right-left.svg" alt="reverse">
+										</div>
+										<div class="texchangeResult">0</div>
+									</div>
+								</div>
+							</form>
+						</section>
+
+						<!-- advert -->
+						<section class="adverts">
+							<div class="advertBody">
+								<h2 class="advertTitle">Advert</h2>
+								<!-- <div class="advert">
+									<a href="https://allo.ua/ua/products/mobile/apple-iphone-12-mini-64gb-blue.html" target='_blank'>
+										<img
+											src="https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/iphone-12-mini-blue-select-2020.jpg"
+											alt="Iphone 12 mini">
+									</a>
+								</div>
+								<div class="advert">
+									<a href="https://allo.ua/ua/products/notebooks/noutbuk-apple-macbook-pro-16-m1-max-space-gray.html"
+										target='_blank'>
+										<img
+											src="https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/f/i/file_2123_5.jpg"
+											alt="MacBook Pro 16 M1 Max 1TB">
+									</a>
+								</div> -->
+							</div>
+						</section>
+					</section>
+
+					<!-- right container -->
+					<aside class="rightContainer">
+
+						<!-- exchange -->
+						<section class="exchangeRates">
+							<form class="currentExchange">
+								<h2>Currency Converter</h2>
+
+								<!-- from -->
+								<div class="from">
+									<p>From</p>
+									<div class="selectBox"><select></select></div>
+								</div>
+
+								<!-- to -->
+								<div class="to">
+									<p>To</p>
+									<div class="selectBox"><select></select></div>
+								</div>
+
+								<!-- rate -->
+								<div class="rate">
+									<p>Rate</p>
+									<div class="selectBox">
+										<div class="icon">
+											<img src="./img/arrow-right-left.svg" alt="reverse">
+										</div>
+										<div class="exchangeRate"></div>
+									</div>
+								</div>
+
+								<!-- amount -->
+								<div class="amount">
+									<p>Amount</p>
+									<input type="text" value="1">
+								</div>
+
+								<!-- result -->
+								<div class="result">
+									<p>Result</p>
+									<div class="selectBox">
+										<div class="icon">
+											<img src="./img/arrow-right-left.svg" alt="reverse">
+										</div>
+										<div class="exchangeResult">0</div>
+									</div>
+								</div>
+							</form>
+						</section>
+
+						<section class="adverts">
+							<div class="advertBody">
+								<h2 class="advertTitle">Advert</h2>
+								<!-- <div class="advert">
+									<a href="https://allo.ua/ua/products/mobile/apple-iphone-12-mini-64gb-blue.html" target='_blank'>
+										<img
+											src="https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/iphone-12-mini-blue-select-2020.jpg"
+											alt="Iphone 12 mini">
+									</a>
+								</div>
+								<div class="advert">
+									<a href="https://allo.ua/ua/products/notebooks/noutbuk-apple-macbook-pro-16-m1-max-space-gray.html"
+										target='_blank'>
+										<img
+											src="https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/f/i/file_2123_5.jpg"
+											alt="MacBook Pro 16 M1 Max 1TB">
+									</a>
+								</div> -->
+							</div>
+						</section>
+					</aside>
+				</div>
+			</div>
+		</main>
+
+		<!-- footer -->
+		<footer class="footer">
+			<div class="wrapper">
+				<div class="footerBody"><span class="copyright">&copy;2023 Organizer project</span></div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- fontAwesome icons -->
+	<script src="https://kit.fontawesome.com/ff48da9210.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
