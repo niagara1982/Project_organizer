@@ -189,7 +189,7 @@ const getForecast = () => {
 };
 
 // todoList
-const BASE_URL = '../data/base.json';
+const BASE_URL = 'https://niagara1982.github.io/Project_organizer/data/base.json';
 let editId,
 	isEditTask = false,
 	tasks = [];
@@ -440,7 +440,7 @@ function loadCalcHistory() {
 const getNews = () => {
 	const newsList = document.querySelector('.newsList tbody');
 
-	fetch(`../data/news.json`)
+	fetch(`https://niagara1982.github.io/Project_organizer/data/news.json`)
 		.then(res => res.json())
 		.then(newsArr => {
 			screenWidth < 1024
@@ -466,58 +466,40 @@ const getNews = () => {
 };
 
 // adverts
-const ADV = [
-	{
-		title: 'Iphone 12 mini',
-		url: 'https://allo.ua/ua/products/mobile/apple-iphone-12-mini-64gb-blue.html',
-		img: 'https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/i/p/iphone-12-mini-blue-select-2020.jpg',
-	},
-	{
-		title: 'MacBook Pro 16 M1 Max 1TB',
-		url: 'https://allo.ua/ua/products/notebooks/noutbuk-apple-macbook-pro-16-m1-max-space-gray.html',
-		img: 'https://i.allo.ua/media/catalog/product/cache/1/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/f/i/file_2123_5.jpg',
-	},
-	{
-		title: 'Apple iPhone 14 Pro Max 256GB Deep Purple',
-		url: 'https://allo.ua/ua/products/mobile/apple-iphone-14-pro-max-256gb-deep-purple.html',
-		img: 'https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/w/w/wwen_iphone14pro_q422_deep-purple_pdp-images_position-1a_2.jpg',
-	},
-	{
-		title: 'Xiaomi Redmi Note 10 Pro 6/128 Onyx Gray',
-		url: 'https://allo.ua/ua/products/mobile/xiaomi-redmi-note-10-pro-6-128-onyx-gray.html',
-		img: 'https://i.allo.ua/media/catalog/product/cache/3/image/710x600/602f0fa2c1f0d1ba5e241f914e856ff9/0/_/0_59_13_1.jpg',
-	},
-];
 
-const showAdverts = () => {
+async function showAdverts() {
 	const advertBodyEl = document.querySelectorAll('.advertBody');
 	let template = ``;
 
-	ADV.forEach(adv => {
-		template += `
+	await fetch('https://niagara1982.github.io/Project_organizer/data/advert.json')
+		.then(res => res.json())
+		.then(adv => {
+			adv.forEach(el => {
+				template += `
 			<div class="advert">
-				<a href="${adv.url}" target='_blank'>
-					<img src="${adv.img}"
-								alt="${adv.title}">
+				<a href="${el.url}" target='_blank'>
+					<img src="${el.img}"
+								alt="${el.title}">
 				</a>
 			</div>
 		`;
-	});
+			});
+		});
 
 	advertBodyEl.forEach(el => {
 		el.insertAdjacentHTML('beforeend', template);
 	});
-};
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	return (
 		(getForecast(),
-		showTodoList(),
-		loadCalcHistory(),
-		getNews(),
-		screenWidth < 1024
-			? getTabletCurrentExchange.run()
-			: getPcCurrentExchange.run()),
-		showAdverts()
+			showTodoList(),
+			loadCalcHistory(),
+			getNews(),
+			screenWidth < 1024
+				? getTabletCurrentExchange.run()
+				: getPcCurrentExchange.run()),
+			showAdverts()
 	);
 });
