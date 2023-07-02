@@ -77,7 +77,7 @@ const getForecast = () => {
 		currentTempEl = document.querySelector('.forecastTemp'),
 		feelsTempEl = document.querySelector('.feelTemp'),
 		forecastDailyEl = document.querySelector('.forecastDaily'),
-		keyAPI = 'P22aoTtsD8ZL1THlOPs1Fk8NWMpAtKYD';
+		keyAPI = '6IPeGG2oaZ4nFf9aFrcuoNBGASVBcJA3';
 
 	// set current week in correct form
 	const setCurrentDate = () => {
